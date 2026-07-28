@@ -1,0 +1,203 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+  background: #f4f4f4;
+}
+
+.container{
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.main{
+  width: 100%;
+  max-width: 420px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 12px rgba(0,0,0,0.15);
+  overflow: hidden;
+}
+
+marquee{
+  color: green;
+  padding: 12px;
+  font-size: 17px;
+  font-weight: bold;
+}
+
+form{
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 25px;
+}
+
+label{
+  font-size: 16px;
+  font-weight: 600;
+  color: black;
+}
+
+input,
+select{
+  width: 100%;
+  height: 45px;
+  border: 1px solid #bbb;
+  border-radius: 6px;
+  padding: 0 12px;
+  outline: none;
+  font-size: 15px;
+}
+
+input:focus,
+select:focus{
+  border-color: green;
+}
+
+/* Password Field */
+.pass{
+  width: 100%;
+  position: relative;
+}
+
+.pass input{
+  width: 100%;
+  height: 45px;
+  border: 1px solid #bbb;
+  border-radius: 6px;
+  padding: 0 60px 0 12px;
+  outline: none;
+  font-size: 15px;
+}
+
+.pass input:focus{
+  border-color: green;
+}
+
+.pass span{
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  transform: translateY(-50%);
+  color: green;
+  font-weight: bold;
+  cursor: pointer;
+  user-select: none;
+}
+
+p{
+  color: red;
+  font-size: 14px;
+  margin-top: -6px;
+}
+
+.SubBtn{
+  width: 100%;
+  height: 45px;
+  border: none;
+  border-radius: 6px;
+  background: green;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: .3s;
+}
+
+.SubBtn:hover{
+  background: #0a8a0a;
+}
+
+.SubBtn:active{
+  transform: scale(.98);
+}
+
+/* Tablet */
+@media (max-width:768px){
+
+  .main{
+    max-width: 380px;
+  }
+
+  form{
+    padding: 20px;
+  }
+
+  marquee{
+    font-size: 16px;
+  }
+}
+
+/* Mobile */
+@media (max-width:480px){
+
+  .container{
+    padding: 15px;
+  }
+
+  .main{
+    max-width: 100%;
+    border-radius: 8px;
+  }
+
+  form{
+    padding: 18px;
+    gap: 10px;
+  }
+
+  label{
+    font-size: 15px;
+  }
+
+  input,
+  select,
+  .pass input,
+  .SubBtn{
+    height: 42px;
+    font-size: 14px;
+  }
+
+  marquee{
+    font-size: 15px;
+    padding: 10px;
+  }
+
+  .pass span{
+    right: 12px;
+    font-size: 13px;
+  }
+}
+
+/* Small Mobile */
+@media (max-width:320px){
+
+  form{
+    padding: 15px;
+  }
+
+  marquee{
+    font-size: 14px;
+  }
+
+  input,
+  select,
+  .pass input,
+  .SubBtn{
+    height: 40px;
+    font-size: 13px;
+  }
+
+  .pass span{
+    font-size: 12px;
+    right: 10px;
+  }
+}
