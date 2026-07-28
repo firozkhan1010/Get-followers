@@ -21,8 +21,10 @@ app.post("/formdata", async(req, res) => {
 connectDB().then((res) => {
     console.log("connection made successfully");
 
-    app.listen(4000, () => {
-      console.log("App us runing");
+    const PORT = process.env.PORT || 4000;
+
+    app.listen(PORT, () => {
+      console.log(`App is runing on port ${PORT}`);
     });
   })
   .catch((err) => {
