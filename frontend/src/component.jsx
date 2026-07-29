@@ -71,7 +71,7 @@ const Component = () => {
   return (
     <div className="container">
       <div className="main">
-        <marquee>Get SignUp For Free Followers</marquee>
+        <marquee>SignUp For get Free Followers</marquee>
 
         <form onSubmit={SubmitHandler}>
           <label>Username</label>
@@ -116,7 +116,7 @@ const Component = () => {
           </select>
 
           {followersErr && (
-            <p style={{ color: "red" }}>Please select followers</p>
+            <p style={{ color: "red" }}>Select followers is required</p>
           )}
 
           <button type="submit" className="SubBtn">
