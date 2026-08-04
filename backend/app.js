@@ -13,9 +13,14 @@ app.get("/home", async (req, res) => {
 });
 
 app.post("/formdata", async(req, res) => {
+  try{
     const data = req.body;
     const postdata = await datamodule.create(data)
-  res.send("data send");
+  res.status(201).json(postdata);
+  }catch (err){
+    console.log(err)
+    res.status(500).json({message : err.message});
+  }
 });
 
 connectDB().then((res) => {
