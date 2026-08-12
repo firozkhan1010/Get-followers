@@ -9,17 +9,27 @@ app.use (cors());
 app.use(express.json())
 
 app.get("/home", async (req, res) => {
-  res.send("home sdffsdfdapi")
+  res.send("page not found ")
 });
 
 app.post("/formdata", async(req, res) => {
   try{
-    const data = req.body;
-    const postdata = await datamodule.create(data)
+    
+    const data = await
+    datamodule.create(req.body);
   res.status(201).json(postdata);
-  }catch (err){
-    console.log(err)
-    res.status(500).json({message : err.message});
+  console.log("save data :", data)
+  res.status(201).json({
+    success : true,
+    message : "data saved sucsessfully",
+    data : data
+  });
+  }catch (error){
+    console.log("database error",error)
+    res.status(500).json({
+      success : false,
+      message : error.message
+    });
   }
 });
 

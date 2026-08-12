@@ -1,6 +1,7 @@
 
 import './App.css'
-import Component from './component'
+// import Component from './component'
+import Invite from './invite'
 
 
 
@@ -9,7 +10,8 @@ function App() {
 
   return (
     <>
-      <Component/>
+      {/* <Component/> */}
+      <Invite/>
       
     </>
   )

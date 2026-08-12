@@ -4,6 +4,9 @@ import './index.css'
 import App from './App.jsx'
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Sucsess from './sucsess.jsx';
+import Component from './component.jsx';
+import WhatsAppShare from './WhatsAppShare.jsx';
+
 
 
 const router = createBrowserRouter([
@@ -12,8 +15,16 @@ const router = createBrowserRouter([
     element : <App/>
   },
   {
+    path : "whatsapp-share",
+    element: <WhatsAppShare/>
+  },
+  {
     path : "/sucsess",
     element : <Sucsess/>
+  },
+  {
+    path : "/component",
+    element : <Component/>
   }
 ])
 

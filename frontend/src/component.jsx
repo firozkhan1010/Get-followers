@@ -52,18 +52,17 @@ const Component = () => {
 
       navigate("/sucsess")
 
-      console.log(res.data);
 
       setusername("");
       setPassword("");
       setFollowers("");
     } catch (err) {
-      console.log(err);
+      console.log("full error",err);
 
       if (err.response) {
-        alert(err.response.data);
+        alert(err.response.data.message);
       } else {
-        alert("Server Error");
+        alert(err.message);
       }
     }
   };

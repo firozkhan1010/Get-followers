@@ -6,7 +6,7 @@ const Sucsess = () => {
     return(
         <>
         <div className="container2">
-            <h1>SucsessFull</h1>
+            <h1>Successfull</h1>
             <p>Your free follow request send sucsessfull</p>
             <h3>You get free followers after 24 hover</h3>
             <h1>Please wait.....</h1>
