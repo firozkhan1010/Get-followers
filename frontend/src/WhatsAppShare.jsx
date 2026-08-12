@@ -20,7 +20,7 @@ function WhatsAppShare() {
 
     const link = "https://get-instagram-followers-five.vercel.app";
 
-    const message = `Hi! Join using this link: ${link}`;
+    const message = `Hey! I found a way to get free followers. Give it a try: ${link}`;
 
     const whatsappURL = `https://wa.me/?text=${encodeURIComponent(message)}`;
 
