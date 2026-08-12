@@ -17,7 +17,7 @@ app.post("/formdata", async(req, res) => {
     
     const data = await
     datamodule.create(req.body);
-  res.status(201).json(postdata);
+
   console.log("save data :", data)
   res.status(201).json({
     success : true,
