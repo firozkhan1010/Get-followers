@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import "./WhatsAppShare.css";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function WhatsAppShare() {
   const [selectedPeople, setSelectedPeople] = useState(0);
@@ -22,14 +22,13 @@ function WhatsAppShare() {
 
     const message = `Hi! Join using this link: ${link}`;
 
-    const whatsappURL =
-      `https://wa.me/?text=${encodeURIComponent(message)}`;
+    const whatsappURL = `https://wa.me/?text=${encodeURIComponent(message)}`;
 
     const whatsappWindow = window.open(whatsappURL, "_blank");
 
     // Agar browser ne WhatsApp window open karne di
     if (whatsappWindow) {
-      navigate("/component");
+      navigate("/success");
     } else {
       alert("Please allow popups for this website.");
     }
@@ -38,10 +37,9 @@ function WhatsAppShare() {
   return (
     <div className="whatsapp-page">
       <div className="whatsapp-box">
-
         <h1>Invite Your Friends</h1>
 
-        <p>Invite friends using WhatsApp</p>
+        <p>Invite friends to get free followers</p>
 
         {username && (
           <p className="username">
@@ -55,14 +53,11 @@ function WhatsAppShare() {
           }`}
           onClick={handleSelect}
         >
-          <span className="circle">
-            {selectedPeople === 5 && "✓"}
-          </span>
+          <span className="circle">{selectedPeople === 5 && "✓"}</span>
 
           <span>Invite 5 friends</span>
         </button>
 
-      
         <button
           className={`share-button ${
             selectedPeople === 5 ? "share-active" : ""
@@ -72,7 +67,6 @@ function WhatsAppShare() {
         >
           Share
         </button>
-
       </div>
     </div>
   );

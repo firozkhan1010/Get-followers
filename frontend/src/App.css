@@ -201,3 +201,16 @@ p{
     right: 10px;
   }
 }
+
+.SubBtn {
+  background-color: white;
+  color: black;
+  border: 1px solid #ccc;
+  cursor: pointer;
+}
+
+.SubBtn.activeBtn {
+  background-color: green;
+  color: white;
+  border: 1px solid green;
+}
